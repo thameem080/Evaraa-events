@@ -2,7 +2,7 @@ import { MapPin, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-black pt-20 pb-10 border-t border-gold/20 relative">
+    <footer id="contact" className="bg-black pt-20 pb-10 border-t border-gold/20 relative">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           
