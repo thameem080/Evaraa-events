@@ -13,7 +13,8 @@ export default function Booking() {
     const date = formData.get("date");
     const message = formData.get("message");
 
-    const whatsappMessage = `*New Inquiry from EVARAA Events*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Event Type:* ${eventType}%0A*Date:* ${date || "Not specified"}%0A*Message:* ${message || "No message"}`;
+    const rawMessage = `*New Inquiry from EVARAA Events*\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Event Type:* ${eventType}\n*Date:* ${date || "Not specified"}\n*Message:* ${message || "No message"}`;
+    const whatsappMessage = encodeURIComponent(rawMessage);
     
     window.open(`https://wa.me/919344589238?text=${whatsappMessage}`, "_blank");
   };
