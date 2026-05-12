@@ -3,7 +3,16 @@
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 
-const reels = [
+type Reel = {
+  id: number;
+  title: string;
+  category: string;
+  videoSrc?: string;
+  thumbnail?: string;
+  type: "video" | "image";
+};
+
+const reels: Reel[] = [
   { id: 1, title: "Royal Wedding", category: "Wedding", videoSrc: "/videos/marriage_reel.mp4", type: "video" },
   { id: 2, title: "Surprise Proposal", category: "Proposal", videoSrc: "/videos/proposal_reel.mp4", type: "video" },
   { id: 3, title: "Grand Gala", category: "Corporate", videoSrc: "/videos/corporate_reel.mp4", type: "video" },
