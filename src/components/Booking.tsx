@@ -4,10 +4,18 @@ import { motion } from "framer-motion";
 import { Send, Phone } from "lucide-react";
 
 export default function Booking() {
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Simulate WhatsApp or API submission
-    alert("Inquiry Sent! We will contact you shortly.");
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name");
+    const phone = formData.get("phone");
+    const eventType = formData.get("eventType");
+    const date = formData.get("date");
+    const message = formData.get("message");
+
+    const whatsappMessage = `*New Inquiry from EVARAA Events*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Event Type:* ${eventType}%0A*Date:* ${date || "Not specified"}%0A*Message:* ${message || "No message"}`;
+    
+    window.open(`https://wa.me/919344589238?text=${whatsappMessage}`, "_blank");
   };
 
   return (
@@ -72,18 +80,18 @@ export default function Booking() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="flex flex-col gap-2">
                   <label htmlFor="name" className="text-xs uppercase tracking-widest text-gold ml-2">Full Name</label>
-                  <input required type="text" id="name" className="bg-black/50 border border-gold/20 rounded-xl px-4 py-3 text-ivory focus:outline-none focus:border-gold transition-colors" placeholder="John Doe" />
+                  <input required name="name" type="text" id="name" className="bg-black/50 border border-gold/20 rounded-xl px-4 py-3 text-ivory focus:outline-none focus:border-gold transition-colors" placeholder="John Doe" />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label htmlFor="phone" className="text-xs uppercase tracking-widest text-gold ml-2">Phone Number</label>
-                  <input required type="tel" id="phone" className="bg-black/50 border border-gold/20 rounded-xl px-4 py-3 text-ivory focus:outline-none focus:border-gold transition-colors" placeholder="+91 XXXXX XXXXX" />
+                  <input required name="phone" type="tel" id="phone" className="bg-black/50 border border-gold/20 rounded-xl px-4 py-3 text-ivory focus:outline-none focus:border-gold transition-colors" placeholder="+91 XXXXX XXXXX" />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="flex flex-col gap-2">
                   <label htmlFor="eventType" className="text-xs uppercase tracking-widest text-gold ml-2">Event Type</label>
-                  <select id="eventType" className="bg-black/50 border border-gold/20 rounded-xl px-4 py-3 text-ivory focus:outline-none focus:border-gold transition-colors appearance-none">
+                  <select name="eventType" id="eventType" className="bg-black/50 border border-gold/20 rounded-xl px-4 py-3 text-ivory focus:outline-none focus:border-gold transition-colors appearance-none">
                     <option value="wedding">Wedding</option>
                     <option value="birthday">Birthday</option>
                     <option value="corporate">Corporate Event</option>
@@ -92,13 +100,13 @@ export default function Booking() {
                 </div>
                 <div className="flex flex-col gap-2">
                   <label htmlFor="date" className="text-xs uppercase tracking-widest text-gold ml-2">Event Date</label>
-                  <input type="date" id="date" className="bg-black/50 border border-gold/20 rounded-xl px-4 py-3 text-ivory focus:outline-none focus:border-gold transition-colors" />
+                  <input name="date" type="date" id="date" className="bg-black/50 border border-gold/20 rounded-xl px-4 py-3 text-ivory focus:outline-none focus:border-gold transition-colors" />
                 </div>
               </div>
 
               <div className="flex flex-col gap-2">
                 <label htmlFor="message" className="text-xs uppercase tracking-widest text-gold ml-2">Message</label>
-                <textarea id="message" rows={4} className="bg-black/50 border border-gold/20 rounded-xl px-4 py-3 text-ivory focus:outline-none focus:border-gold transition-colors resize-none" placeholder="Tell us about your dream event..." />
+                <textarea name="message" id="message" rows={4} className="bg-black/50 border border-gold/20 rounded-xl px-4 py-3 text-ivory focus:outline-none focus:border-gold transition-colors resize-none" placeholder="Tell us about your dream event..." />
               </div>
 
               <button type="submit" className="flex items-center justify-center gap-2 w-full py-4 bg-gold text-black font-bold uppercase tracking-widest rounded-xl hover:bg-ivory transition-colors mt-2">
