@@ -24,7 +24,7 @@ export default function Navbar() {
     { name: "Home", href: "/#home" },
     { name: "Services", href: "/#services" },
     { name: "Portfolio", href: "/#portfolio" },
-    { name: "About", href: "/#about" },
+    { name: "About", href: "/about" },
     { name: "Testimonials", href: "/#testimonials" },
     { name: "Contact", href: "/#contact" },
   ];
@@ -64,7 +64,7 @@ export default function Navbar() {
           ))}
           <a
             href="/#booking"
-            className="ml-4 px-6 py-2 border border-gold text-gold hover:bg-gold hover:text-black transition-all duration-300 box-glow"
+            className="ml-4 px-6 py-2 border border-gold text-gold hover:bg-gold hover:text-black transition-all duration-300 box-glow font-heading tracking-widest"
           >
             Book Now
           </a>
@@ -101,7 +101,7 @@ export default function Navbar() {
             <a
               href="/#booking"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="mt-4 px-8 py-3 bg-gold text-black font-semibold tracking-wide"
+              className="mt-4 px-8 py-3 bg-gold text-black font-semibold tracking-wide font-heading"
             >
               Book Now
             </a>

@@ -52,13 +52,16 @@ export default function Reels() {
             >
               {reel.type === "video" ? (
                 <video
-                  src={reel.videoSrc}
                   autoPlay
                   loop
                   muted
                   playsInline
+                  preload="metadata"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+                >
+                  <source src={reel.videoSrc} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               ) : (
                 <img
                   src={reel.thumbnail}

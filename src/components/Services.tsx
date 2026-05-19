@@ -87,7 +87,7 @@ export default function Services() {
                 </div>
                 
                 <Link href={service.link} className="flex items-center gap-2 px-6 py-3 bg-gold/10 hover:bg-gold text-gold hover:text-black border border-gold/50 rounded-full transition-all duration-300 z-10">
-                  <span className="uppercase tracking-widest text-sm font-semibold">View Packages</span>
+                  <span className="uppercase tracking-widest text-sm font-semibold font-heading">View Packages</span>
                   <ArrowRight size={18} />
                 </Link>
               </div>

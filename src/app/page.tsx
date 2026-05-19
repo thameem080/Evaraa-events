@@ -2,9 +2,6 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import Reels from "@/components/Reels";
-import About from "@/components/About";
-import Features from "@/components/Features";
-import Timeline from "@/components/Timeline";
 import Testimonials from "@/components/Testimonials";
 import Booking from "@/components/Booking";
 import Footer from "@/components/Footer";
@@ -16,9 +13,6 @@ export default function Home() {
       <Services />
       <Portfolio />
       <Reels />
-      <About />
-      <Features />
-      <Timeline />
       <Testimonials />
       <Booking />
       <Footer />

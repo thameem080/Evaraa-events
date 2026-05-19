@@ -110,7 +110,7 @@ export default function Booking() {
                 <textarea name="message" id="message" rows={4} className="bg-black/50 border border-gold/20 rounded-xl px-4 py-3 text-ivory focus:outline-none focus:border-gold transition-colors resize-none" placeholder="Tell us about your dream event..." />
               </div>
 
-              <button type="submit" className="flex items-center justify-center gap-2 w-full py-4 bg-gold text-black font-bold uppercase tracking-widest rounded-xl hover:bg-ivory transition-colors mt-2">
+              <button type="submit" className="flex items-center justify-center gap-2 w-full py-4 bg-gold text-black font-heading font-bold uppercase tracking-widest rounded-xl hover:bg-ivory transition-colors mt-2">
                 Send Inquiry <Send size={18} />
               </button>
             </form>
